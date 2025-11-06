@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Smart Energy — Family App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="./style.css"/>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">⚡ Smart Energy</div>
+
+    <nav class="nav">
+      <button class="nav-btn active" data-page="dashboard">Dashboard</button>
+      <button class="nav-btn" data-page="marketplace">Marketplace</button>
+      <button class="nav-btn" data-page="sell">Sell</button>
+    </nav>
+
+    <div class="user-switch">
+      <label for="userSelect">User</label>
+      <select id="userSelect" aria-label="Select user"></select>
+    </div>
+  </header>
+
+  <main>
+    <!-- DASHBOARD -->
+    <section id="page-dashboard" class="page show">
+      <h2 class="page-title">Dashboard</h2>
+      <div class="grid">
+
+        <!-- Balance -->
+        <div class="card">
+          <div class="card-title">Balance</div>
+          <div class="big-number">€ <span id="balance">0.00</span></div>
+          <div class="row">
+            <input id="fundAmount" type="number" step="0.1" min="0" placeholder="Add € (e.g. 5)"/>
+            <button id="btnFund">Add Funds</button>
+          </div>
+          <p class="muted">Tip: add a little balance before buying from households.</p>
+        </div>
+
+        <!-- Surplus -->
+        <div class="card">
+          <div class="card-title">Stored Surplus</div>
+          <div class="big-number"><span id="surplus">0.00</span> kWh</div>
+          <p class="muted">Surplus updates when your smart meter reports a new sample.</p>
+        </div>
+
+        <!-- Recent Purchases -->
+        <div class="card">
+          <div class="card-title">Recent Purchases</div>
+          <ul id="tradesList" class="list"></ul>
+        </div>
+
+        <!-- Charts row -->
+        <div class="card chart-card">
+          <div class="card-title">Provider Price (€/kWh)</div>
+          <div class="chart-wrap"><canvas id="chartProvider"></canvas></div>
+        </div>
+
+        <div class="card chart-card">
+          <div class="card-title">My Balance (€)</div>
+          <div class="chart-wrap"><canvas id="chartBalance"></canvas></div>
+        </div>
+
+        <div class="card chart-card">
+          <div class="card-title">Energy Usage (kWh)</div>
+          <div class="chart-wrap"><canvas id="energyUsageChart"></canvas></div>
+        </div>
+
+        <div class="card chart-card">
+          <div class="card-title">Energy Production (kWh)</div>
+          <div class="chart-wrap"><canvas id="energyProductionChart"></canvas></div>
+        </div>
+
+        <div class="card chart-card">
+          <div class="card-title">My Surplus (kWh)</div>
+          <div class="chart-wrap"><canvas id="chartSurplus"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARKETPLACE -->
+    <section id="page-marketplace" class="page">
+      <h2 class="page-title">Marketplace</h2>
+      <p class="muted">
+        Top cards show <b>Providers</b> (always available; dynamic hourly price).  
+        Below are <b>Household offers</b>. Choose kWh and press Buy.
+      </p>
+      <div id="marketGrid" class="grid"></div>
+    </section>
+
+    <!-- SELL -->
+    <section id="page-sell" class="page">
+      <h2 class="page-title">Sell Energy</h2>
+      <div class="card">
+        <div class="row">
+          <div class="stack">
+            <label>Stored Surplus</label>
+            <div class="big-number"><span id="sellSurplus">0.00</span> kWh</div>
+          </div>
+          <div class="stack">
+            <label>Suggested Price</label>
+            <div class="big-number">€ <span id="suggestedPrice">0.20</span> / kWh</div>
+            <small class="muted">Based on current provider price</small>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+          <div class="stack">
+            <label for="sellKwh">How much to sell (kWh)</label>
+            <input id="sellKwh" type="number" step="0.1" min="0" placeholder="e.g. 2.5"/>
+          </div>
+          <div class="stack">
+            <label for="sellPrice">Price (€/kWh)</label>
+            <input id="sellPrice" type="number" step="0.01" min="0" placeholder="e.g. 0.19"/>
+          </div>
+        </div>
+        <div class="row end">
+          <button id="btnSell">Create Offer</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>
+      Providers are displayed first with dynamic pricing. Household offers are user-initiated only.
+    </small>
+  </footer>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>

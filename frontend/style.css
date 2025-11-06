@@ -1,0 +1,127 @@
+:root {
+  --bg:#f5f7fa;
+  --fg:#1a1a1a;
+  --muted:#666;
+  --card:#ffffff;
+  --border:#d8dce5;
+  --primary:#2563eb;
+  --primary-2:#1d4ed8;
+  --accent:#00b894;
+  --provider:#e9f8f1;
+  --provider-border:#8ad7b1;
+  --danger:#ef4444;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--bg); color:var(--fg);
+}
+
+/* HEADER BAR */
+.topbar{
+  display:flex; align-items:center; gap:16px; justify-content:space-between;
+  padding:14px 18px; border-bottom:1px solid var(--border);
+  background:#ffffff; box-shadow:0 1px 3px rgba(0,0,0,0.05);
+}
+.brand{font-weight:700; letter-spacing:.2px; color:var(--primary);}
+.nav{display:flex; gap:8px}
+.nav-btn{
+  background:#f0f2f8; color:var(--fg);
+  border:1px solid var(--border); border-radius:10px; padding:8px 12px;
+  cursor:pointer; transition:all .15s;
+}
+.nav-btn:hover{background:#e7ebf5;}
+.nav-btn.active{ background:var(--primary); border-color:var(--primary); color:#fff;}
+.user-switch{display:flex; align-items:center; gap:8px}
+.user-switch select{
+  background:#fff; color:var(--fg);
+  border:1px solid var(--border); border-radius:8px; padding:8px 10px;
+}
+
+/* MAIN */
+main{max-width:1100px;margin:18px auto;padding:0 14px}
+.page{display:none}
+.page.show{display:block}
+.page-title{margin:8px 0 14px 0; font-weight:700; color:#0e172a;}
+.muted{color:var(--muted); line-height:1.5}
+
+/* GRID & CARDS */
+.grid{
+  display:grid; gap:12px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.card{
+  background:var(--card); border:1px solid var(--border);
+  border-radius:12px; padding:14px;
+  box-shadow:0 2px 4px rgba(0,0,0,0.04);
+  transition: box-shadow .2s;
+}
+.card:hover{box-shadow:0 3px 8px rgba(0,0,0,0.06);}
+.card-title{font-weight:600;margin-bottom:8px;color:#0e172a}
+.big-number{font-size:28px; font-weight:700; margin:4px 0 6px}
+
+/* ROWS, STACKS, FORMS */
+.row{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.row.end{justify-content:flex-end}
+.stack{display:flex; flex-direction:column; gap:6px; min-width:220px}
+input,select,button{
+  padding:10px 12px; border-radius:10px; border:1px solid var(--border);
+  background:#fff; color:var(--fg);
+}
+button{background:var(--primary); border-color:var(--primary); color:#fff; cursor:pointer}
+button:hover{background:var(--primary-2)}
+button.secondary{background:#fff; border-color:var(--border); color:var(--fg)}
+button.secondary:hover{background:#f0f0f0;}
+button[disabled]{opacity:.6; cursor:not-allowed}
+
+/* LIST (Recent trades) */
+.list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px}
+.list li{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:8px 10px; border:1px solid var(--border); border-radius:10px;
+  background:#fff; font-size:14px;
+}
+
+/* DIVIDER & FOOTER */
+.divider{height:1px; background:var(--border); margin:12px 0}
+.footer{max-width:1100px;margin:18px auto; padding:0 14px 24px; color:var(--muted); font-size:13px; text-align:center;}
+
+/* MARKETPLACE CARDS */
+.mkt-card{display:flex; flex-direction:column; gap:8px}
+.mkt-top{display:flex; justify-content:space-between; align-items:center}
+.badge{
+  font-size:12px; padding:2px 6px; border-radius:8px;
+  border:1px solid var(--border); background:#f0f2f8; color:var(--muted);
+}
+.price{font-weight:700; font-size:18px; color:var(--primary);}
+small.hint{color:var(--muted);}
+
+/* Provider boxes (highlighted) */
+.provider{
+  background:var(--provider);
+  border-color:var(--provider-border);
+}
+.provider .badge{
+  background:#c8f0d8; border-color:#8ad7b1; color:#076d4e;
+}
+
+/* Buy row */
+.buy-row{display:flex; gap:8px; align-items:center}
+.buy-row input{flex:1; min-width:120px}
+
+/* Chart cards: fixed height */
+.chart-card { display:flex; flex-direction:column; }
+.chart-wrap { position:relative; width:100%; height:220px; }
+.chart-wrap canvas { position:absolute; inset:0; width:100% !important; height:100% !important; }
+
+/* Responsive: charts full width on small screens */
+@media (max-width: 780px) {
+  .chart-card { grid-column: 1 / -1; }
+}
+
+/* Tab animation */
+.page { opacity:0; transform: translateY(6px); transition: opacity .25s ease, transform .25s ease; display:none; }
+.page.show { display:block; }
+.page.enter { opacity:1; transform: translateY(0); }
