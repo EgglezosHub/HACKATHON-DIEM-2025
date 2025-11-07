@@ -1,1717 +1,285 @@
-INFO:     Will watch for changes in these directories: ['/home/dimitris/Desktop/test/HACKATHON-DIEM-2025/backend']
+INFO:     Will watch for changes in these directories: ['/home/dimitris/Desktop/test3/HACKATHON-DIEM-2025/backend']
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [311344] using WatchFiles
-INFO:     Started server process [311348]
+INFO:     Started reloader process [10936] using WatchFiles
+INFO:     Started server process [10940]
 INFO:     Waiting for application startup.
-[MeterSimulator] Not started (SIMULATION_ENABLED=False).
+[MeterSimulator] Started with interval=10s.
 INFO:     Application startup complete.
-INFO:     127.0.0.1:38260 - "GET /users HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38264 - "GET /users HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38264 - "GET /provider/series?hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38264 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:38272 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38280 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38284 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38284 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38280 - "GET /meter/series?user_id=3&hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38280 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38280 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38284 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:38272 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38280 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38264 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38264 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38264 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38264 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38264 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:38264 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:38272 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38280 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38284 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38284 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38284 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38284 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38298 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38280 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38284 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38290 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38264 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38304 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38298 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38280 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38280 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38298 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38280 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38298 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38280 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38298 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38322 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38330 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38312 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38322 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38322 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38322 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38322 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54432 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:54444 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54450 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54452 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54452 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54452 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54452 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54452 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54452 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:54444 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54450 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54444 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:54452 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54452 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54452 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54452 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49998 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50004 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49988 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49998 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49998 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49998 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49998 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42318 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:42338 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42322 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42346 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42346 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42346 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42346 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42346 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42346 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42346 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:42338 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42322 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42318 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:42346 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42318 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42318 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42318 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42378 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42372 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42362 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42372 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42372 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42372 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42372 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42606 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:42620 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42608 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42622 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42622 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42622 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42622 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42622 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42622 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:42606 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:42608 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42620 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42622 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42622 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42622 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:42622 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43788 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43780 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43776 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43796 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43780 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43780 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43780 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43804 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43804 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37388 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37376 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37404 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37404 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37404 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37404 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37404 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37404 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37388 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37376 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37388 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37376 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37404 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37432 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37416 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37438 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37454 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37454 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37454 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37454 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37462 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37470 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37492 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37480 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37470 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37470 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37470 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /provider/series?hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /meter/series?user_id=4&hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /status/extended?user_id=4 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37376 - "GET /trades?user_id=4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37404 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37498 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37498 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37498 - "GET /provider/series?hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37498 - "GET /meter/series?user_id=5&hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37498 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37498 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37376 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37404 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37388 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37376 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37404 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37498 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37498 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37498 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37498 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37498 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52208 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52200 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52186 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52200 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52200 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52200 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52200 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49656 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49656 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:49670 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49668 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49676 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49676 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49676 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49676 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49676 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49692 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49678 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49698 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49710 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49692 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49692 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49692 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36742 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:36754 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36746 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36758 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36746 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36746 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36746 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36746 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36746 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36746 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41940 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41954 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41924 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41964 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41940 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41940 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41940 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39324 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:39338 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39352 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39360 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39360 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39360 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39360 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39360 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39360 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39360 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39366 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39338 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:39382 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39360 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39394 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39352 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39324 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39404 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39360 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:39338 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39426 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39352 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39414 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39426 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39352 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39414 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39426 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39352 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39352 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39426 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39414 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39414 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39452 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39442 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39456 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39438 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39414 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39442 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39442 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39442 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39414 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60006 - "GET /provider/series?hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60006 - "GET /meter/series?user_id=3&hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60006 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60006 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:60018 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60008 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60030 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60030 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60030 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:60008 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60018 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60006 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60006 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60006 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60006 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60006 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60006 - "GET /provider/series?hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60006 - "GET /meter/series?user_id=4&hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60006 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60006 - "GET /status/extended?user_id=4 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:60008 - "GET /trades?user_id=4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60018 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60030 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60030 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52462 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52434 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52448 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52466 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52448 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52448 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52448 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52482 - "OPTIONS /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52496 - "POST /offers HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52496 - "GET /status/extended?user_id=4 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:49208 - "GET /trades?user_id=4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52482 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49214 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49214 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49214 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49214 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49214 - "GET /meter/last?user_id=4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49214 - "GET /provider/series?hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49214 - "GET /meter/series?user_id=5&hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49214 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49214 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:49208 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52482 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52496 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52496 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52496 - "POST /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52482 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:49208 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52496 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49208 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49224 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49230 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49222 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49224 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49224 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49224 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49224 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51070 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:51076 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51078 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51094 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51094 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51094 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51094 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51094 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38508 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38494 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38498 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38508 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38498 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38498 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38498 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45010 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45024 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45028 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45036 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45036 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45036 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45036 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45036 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45028 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45048 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45074 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45058 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45024 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45036 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45010 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45090 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45090 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45058 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45036 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45010 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45024 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45058 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45024 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45024 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45058 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45024 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45024 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45058 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45024 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45010 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45120 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45104 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45132 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45104 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45104 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45104 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45104 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43804 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43804 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:43824 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43816 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43830 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43816 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43816 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43816 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43816 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41190 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41182 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41168 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41182 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41182 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41182 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41182 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41218 - "GET /provider/series?hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41218 - "GET /meter/series?user_id=4&hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41218 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41218 - "GET /status/extended?user_id=4 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:41236 - "GET /trades?user_id=4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41230 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41240 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41240 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41240 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41240 - "GET /status/extended?user_id=4 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:41230 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41236 - "GET /trades?user_id=4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41218 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41218 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41218 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41218 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41218 - "GET /meter/last?user_id=4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52820 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52816 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52814 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52822 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52816 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52816 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52816 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52838 - "OPTIONS /accept HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52848 - "POST /accept HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52848 - "GET /status/extended?user_id=4 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:48452 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52838 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48440 - "GET /trades?user_id=4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48452 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48462 - "GET /status/extended?user_id=4 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:48474 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48484 - "GET /trades?user_id=4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48500 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48500 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48500 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48500 - "GET /status/4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48500 - "GET /meter/last?user_id=4 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47736 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47742 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47724 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47750 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47736 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47736 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47736 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47760 - "GET /provider/series?hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47760 - "GET /meter/series?user_id=5&hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47760 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47760 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:47774 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47772 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47786 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47786 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48104 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:48108 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48110 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48106 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48106 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48106 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48106 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48106 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48110 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:48124 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48106 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48126 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48104 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48134 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48136 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48108 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48136 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48104 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:48110 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48108 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48150 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48150 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48136 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48150 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48104 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48164 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48178 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48156 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48104 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48182 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48150 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48136 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48164 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48136 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48164 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48136 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48164 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33012 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:33034 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33028 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33050 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33050 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33050 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33050 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33050 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47826 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47824 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47808 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47830 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47824 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47824 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:47824 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54938 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:54962 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54950 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54964 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54964 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54964 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54964 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54964 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55010 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54980 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54994 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55026 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54994 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54994 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54994 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33214 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33214 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:33230 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33220 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33246 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33246 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33246 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33246 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33246 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55620 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55614 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55598 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55614 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55614 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55614 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55614 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55640 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55640 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:54522 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54530 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55640 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:55640 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:54530 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54542 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54522 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54530 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54522 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54530 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54530 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54522 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54522 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54522 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54522 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54522 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:54542 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54530 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54542 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:54522 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54522 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54522 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54522 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54542 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54530 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54522 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54548 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54580 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54564 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54584 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54542 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54542 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54584 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54542 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54584 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54542 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54584 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54626 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54610 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54596 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54610 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54610 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54610 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54610 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57728 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:57750 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57736 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57766 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57766 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57766 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57766 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57766 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57766 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:57750 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57736 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57750 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:57736 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57736 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57736 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57736 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49888 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49898 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49894 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49898 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49898 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49898 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49898 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55892 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:55918 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55906 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55928 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55928 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55928 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55928 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55928 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55928 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:55892 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:55906 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55918 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55928 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55928 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55928 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55928 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55960 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55954 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55944 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55972 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55954 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55954 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55954 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45358 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45378 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45390 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45370 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45370 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45370 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45370 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45370 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45370 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45358 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45390 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45378 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45370 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45370 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45370 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45370 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46472 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46468 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46462 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46468 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46468 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46468 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46468 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37494 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37518 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37522 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37510 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37510 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37510 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37510 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37510 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37510 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37494 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37510 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37518 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37534 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37522 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37524 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37550 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37540 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37550 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37494 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37522 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37518 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37534 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37518 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37534 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37518 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37518 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37522 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37534 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37522 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37534 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37522 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37570 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37580 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37584 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37570 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37570 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37570 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37570 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37030 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37058 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37044 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37060 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37060 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37060 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37060 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37060 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51332 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51314 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51324 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51334 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51324 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51324 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51324 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33504 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:33524 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33532 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33508 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33508 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33508 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33508 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33508 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33554 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33570 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33546 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33578 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33554 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33554 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33554 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34584 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:34598 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34602 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34604 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34604 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34604 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34604 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34604 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56764 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56750 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56734 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56764 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56750 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56750 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56750 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33074 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:33080 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33096 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33112 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33112 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33112 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33112 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33112 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33112 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:33126 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33096 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33074 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:33112 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33080 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33142 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33152 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33096 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33132 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33164 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33180 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33112 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33112 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33164 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33112 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33112 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33180 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33164 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33180 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33112 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33164 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33204 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33196 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33182 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33196 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33196 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33196 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33196 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46960 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:46970 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46978 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46980 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46980 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46980 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46980 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46980 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56628 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56636 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56612 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56628 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56628 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56628 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56628 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37666 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37640 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37654 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37666 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37654 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37654 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37654 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53158 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:53190 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53174 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53204 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53204 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53204 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53204 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53204 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53204 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53204 - "GET /users HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53204 - "GET /provider/series?hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53204 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:53158 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53190 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53174 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53174 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53174 - "GET /meter/series?user_id=3&hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53158 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53158 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53158 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53158 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:53174 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53190 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53204 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36098 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36098 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36140 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36126 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36114 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36126 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36126 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36126 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36126 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36098 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36098 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:36098 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36178 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:36162 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36098 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36098 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36098 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36098 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36186 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:48986 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36186 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:48984 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49002 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49002 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49002 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49002 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49002 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49010 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49014 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49016 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48984 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36186 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49032 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36186 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49032 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36186 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49032 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36186 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49032 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36186 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49048 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49060 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49074 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49040 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49048 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49048 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49048 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36186 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:48984 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49002 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48986 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48986 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48986 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48986 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48986 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60692 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:60718 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:60708 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60716 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60692 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60692 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60692 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60692 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60692 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:60692 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60716 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60718 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60718 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60718 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60718 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60718 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60748 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60728 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60734 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60758 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60734 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60734 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60734 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53800 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:53814 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53806 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53800 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:53816 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53816 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53816 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53816 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53816 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:53800 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53806 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53814 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53814 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53814 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53814 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53814 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53846 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53840 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53826 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53840 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53840 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53840 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53840 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53814 - "GET /users HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53814 - "GET /provider/series?hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53814 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:53806 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53800 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53816 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53816 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53816 - "GET /meter/series?user_id=3&hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53816 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53816 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53816 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53816 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:53816 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53800 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53816 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53816 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53816 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34464 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:34486 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34476 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34486 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:34476 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34476 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34476 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34476 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34526 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34516 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34502 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34516 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34516 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34516 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34516 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34552 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:34566 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34578 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34558 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34558 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34558 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34558 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34558 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40578 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40586 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:40586 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:40622 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40602 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40608 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40636 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40644 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40648 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40660 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40622 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40670 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40636 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40660 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40636 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40636 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40670 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40660 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40636 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40636 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40660 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40636 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40672 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40686 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40708 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40686 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40686 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40686 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40686 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49664 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:49674 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49686 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49672 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49672 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49672 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49672 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49672 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49672 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39890 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39880 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39878 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39904 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39880 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39880 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39880 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39914 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:39916 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39922 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39926 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39926 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39926 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39926 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39926 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33482 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33476 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33464 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33488 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33476 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33476 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33476 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38186 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:38196 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38200 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38216 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38216 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38216 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38216 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38216 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38216 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38216 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:38228 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38222 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38216 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:38216 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38216 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38216 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38216 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38216 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:38228 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38222 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38216 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:38228 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38228 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38228 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38228 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44920 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44916 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44900 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44936 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44916 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44916 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44916 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44948 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:44974 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44958 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44976 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44976 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44976 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44976 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44976 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57228 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:57246 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57228 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:57244 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57256 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57256 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57256 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57256 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57256 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57228 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57244 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57278 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57268 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57276 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57256 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57276 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57256 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57276 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57256 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57276 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57256 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57276 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57322 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57308 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57292 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57308 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57308 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57308 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57308 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46632 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:46642 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46658 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46670 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46670 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46670 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46670 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46670 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45748 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45766 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45754 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45766 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45748 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45766 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45766 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45766 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45790 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45782 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45770 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45794 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45782 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45782 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45782 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45804 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45824 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45810 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45832 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45832 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45832 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45832 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45832 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40134 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:40140 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40134 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:40136 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40148 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40148 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40148 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40148 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40172 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40154 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40164 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40172 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40164 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40164 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40164 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37522 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37544 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37528 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37552 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37552 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37552 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37552 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37552 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35750 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35734 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35732 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35734 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35734 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35734 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35734 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45854 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45842 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45866 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45856 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45880 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45892 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45888 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45882 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45916 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45906 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45854 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45856 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45892 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45906 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45916 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45854 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45882 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45854 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45882 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45854 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45916 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45854 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45882 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45854 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45916 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45906 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45854 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45854 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45906 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45906 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45934 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45938 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45948 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45932 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45934 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45934 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45934 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57720 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57696 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57712 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57720 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57712 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57712 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57712 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50780 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50764 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50750 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50790 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50764 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50764 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50764 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39316 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39326 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39312 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39342 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39316 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39316 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39316 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49166 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:49194 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:49154 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49184 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49180 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49160 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49216 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49210 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49222 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49210 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:49216 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49160 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49222 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49180 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49194 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49216 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49222 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49180 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49194 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49222 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49240 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49256 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49226 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49194 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49180 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49216 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49268 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49240 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49216 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49180 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49222 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49240 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49194 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49194 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49240 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49194 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49194 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49194 - "GET /users HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49194 - "GET /provider/series?hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49194 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:49222 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49216 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49160 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49160 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49160 - "GET /meter/series?user_id=3&hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49160 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49160 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49216 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:49160 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49216 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49222 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49160 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49160 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49160 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49160 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49438 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49434 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49436 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49444 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49436 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49436 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49436 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49446 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:49474 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49460 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49486 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49486 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49486 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49486 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49486 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41462 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41442 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41446 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41462 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41446 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41446 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41446 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44400 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:44414 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44408 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44428 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44428 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44428 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44428 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44428 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37930 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37910 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37916 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37936 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37916 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37916 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37916 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37944 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37970 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37954 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37962 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37962 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37962 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37962 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37962 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56532 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:56542 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56522 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56608 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:56568 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56570 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56558 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56596 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56580 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56612 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56532 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56522 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56522 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56612 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56522 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56522 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56612 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56532 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56522 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56612 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56532 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56532 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56644 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56656 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56626 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56644 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56644 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56644 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56644 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56532 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:56558 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56522 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56568 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56568 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56568 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56568 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56568 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45560 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45552 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45544 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45566 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45552 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45552 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45552 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45570 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45594 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45582 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45602 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45602 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45602 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45602 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45602 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45668 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45684 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45662 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45668 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45668 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45668 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45668 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45716 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45716 - "GET /users HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45716 - "GET /provider/series?hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45716 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:43294 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43306 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43312 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43312 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43312 - "GET /meter/series?user_id=3&hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43312 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43312 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43312 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43312 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:43306 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43294 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43318 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45716 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43318 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43318 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37334 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37354 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37348 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37340 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37348 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37348 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37348 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37348 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37334 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37372 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37380 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37390 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37390 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37390 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37390 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37390 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37390 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37390 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37372 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37380 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37380 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37380 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37380 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37380 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58126 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:58150 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58142 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58126 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:58142 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58142 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58142 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58142 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58142 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58126 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58166 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58160 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58150 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58174 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58126 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58166 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58126 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58166 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58126 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58166 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58126 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58166 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58192 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58188 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58182 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58188 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58188 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58188 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58188 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58126 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:58150 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58142 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43710 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43710 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43710 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43710 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43710 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48396 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:48410 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48408 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48408 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:48396 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48408 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48408 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48408 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48416 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48414 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48412 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48426 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48414 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48414 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48414 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48408 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:48410 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48432 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48396 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48396 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48396 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48396 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:48396 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57184 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:57196 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57186 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57184 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:57196 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57196 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57196 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57196 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57198 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57214 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57226 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57242 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57214 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57214 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57214 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57196 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:57184 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57186 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41246 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41246 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41246 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41246 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:41246 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45754 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45762 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45756 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45754 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45764 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45754 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45754 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45754 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45792 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45776 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45774 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45800 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45776 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45776 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45776 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45754 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:45762 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45756 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45764 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45764 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45764 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45764 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45764 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33858 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:33844 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33868 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33848 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33858 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:33876 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33890 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33866 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33888 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33900 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33888 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33868 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33858 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33888 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33858 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33858 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33858 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33888 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33868 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33888 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33868 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33858 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33946 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33932 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33916 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33952 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33932 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33932 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33932 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33858 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:33900 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33868 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33890 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33890 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33890 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33890 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33890 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37422 - "GET /users HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37422 - "GET /provider/series?hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37422 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37436 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37426 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37452 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37452 - "GET /meter/series?user_id=3&hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37426 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37426 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37426 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37452 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37426 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37436 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34824 - "GET /users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34828 - "GET /users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34828 - "GET /provider/series?hours=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34828 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:34838 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34852 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34856 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34856 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34852 - "GET /meter/series?user_id=3&hours=12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34856 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34856 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34852 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:34856 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34838 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34828 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34856 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34856 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34856 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34856 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34856 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40252 - "OPTIONS /accept HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40256 - "POST /accept HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/test3/HACKATHON-DIEM-2025/backend/app/main.py", line 261, in accept
+    t = services.accept_offer(
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/test3/HACKATHON-DIEM-2025/backend/app/services.py", line 364, in accept_offer
+    offer.status = OfferStatus.completed.value
+                   ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'OfferStatus' has no attribute 'completed'
+INFO:     127.0.0.1:40252 - "POST /accept HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/test3/HACKATHON-DIEM-2025/backend/app/main.py", line 261, in accept
+    t = services.accept_offer(
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/test3/HACKATHON-DIEM-2025/backend/app/services.py", line 364, in accept_offer
+    offer.status = OfferStatus.completed.value
+                   ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'OfferStatus' has no attribute 'completed'
+INFO:     127.0.0.1:37376 - "POST /accept HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/Hackathon2025/backend/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/test3/HACKATHON-DIEM-2025/backend/app/main.py", line 261, in accept
+    t = services.accept_offer(
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dimitris/Desktop/test3/HACKATHON-DIEM-2025/backend/app/services.py", line 364, in accept_offer
+    offer.status = OfferStatus.completed.value
+                   ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'OfferStatus' has no attribute 'completed'
+INFO:     127.0.0.1:37392 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:37412 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37400 - "GET /offers HTTP/1.1" 200 OK
 INFO:     127.0.0.1:37422 - "GET /status/3 HTTP/1.1" 200 OK
 INFO:     127.0.0.1:37422 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37422 - "GET /offers HTTP/1.1" 200 OK
 INFO:     127.0.0.1:37422 - "GET /status/3 HTTP/1.1" 200 OK
 INFO:     127.0.0.1:37422 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37422 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34246 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34234 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34232 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34260 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34234 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34234 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34234 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37654 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:37668 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37656 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37672 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37672 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37672 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37672 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37672 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37686 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37676 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37678 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37686 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37678 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37678 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37678 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36434 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:36450 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36454 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36438 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36438 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36438 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36438 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36438 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59592 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59560 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59576 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59594 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59576 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59576 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59576 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59602 - "GET /users HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59602 - "GET /provider/series?hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59602 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:59614 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59604 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59630 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59630 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59604 - "GET /meter/series?user_id=3&hours=12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59604 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59604 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59604 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59630 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:59614 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59602 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59640 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59602 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59614 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59614 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59614 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:55574 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55584 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59614 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:59614 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59614 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59614 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59614 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55590 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:55598 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55590 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:55608 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55620 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55620 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55620 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55620 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55608 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55620 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55636 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55642 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55590 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55654 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55590 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55654 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55590 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55654 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55654 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55590 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55654 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55590 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55670 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55656 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55692 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55670 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55670 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55670 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55670 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55590 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:55620 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55608 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55598 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55608 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55608 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55608 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55608 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:51292 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51286 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:51286 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51286 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51286 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51286 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51328 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51338 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51320 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51306 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51320 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51320 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51320 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51286 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:51292 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51340 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51340 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51340 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51340 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51340 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55720 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:55720 - "GET /status/extended?user_id=5 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:55732 - "GET /trades?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55724 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55738 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55738 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55738 - "GET /status/5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55738 - "GET /meter/last?user_id=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55768 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55760 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55750 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55760 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55760 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55760 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55760 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55738 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:55724 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55732 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55720 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55720 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55720 - "GET /offers HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55720 - "GET /status/3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55720 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53606 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53616 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:53616 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:53640 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53630 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53642 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53640 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53630 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53642 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53640 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53642 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53640 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53642 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53642 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53640 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53640 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53640 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53640 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53640 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:53630 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53642 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53616 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53616 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53616 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53616 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53616 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50992 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:51006 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51008 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51022 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51022 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51022 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51022 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51022 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50424 - "GET /status/extended?user_id=3 HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:50432 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50446 - "GET /trades?user_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50452 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50452 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50452 - "GET /offers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50452 - "GET /status/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50452 - "GET /meter/last?user_id=3 HTTP/1.1" 200 OK
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
+[MeterSimulator] Stopped.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [311348]
-INFO:     Stopping reloader process [311344]
+INFO:     Finished server process [10940]
+INFO:     Stopping reloader process [10936]

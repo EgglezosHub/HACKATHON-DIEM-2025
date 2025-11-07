@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     # -------------------------------------------------------
     # SIMULATION (NO AUTO-OFFERS)
     # -------------------------------------------------------
-    SIMULATION_ENABLED: bool = False
+    SIMULATION_ENABLED: bool = True
 
     SIMULATION_INTERVAL_SECONDS: int = 10
     # How often to generate meter samples (if enabled).

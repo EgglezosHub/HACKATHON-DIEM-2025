@@ -14,6 +14,38 @@ from app.models import User, UserRole
 from app import services
 
 
+def _backfill_last_12h(db: Session, step_minutes: int = 10) -> None:
+    """
+    Create synthetic meter samples for the last 12 hours for each non-provider user.
+    This runs once on startup so the dashboard has immediate 12h history.
+    """
+    now = int(time.time())
+    start = now - 12 * 3600
+    step = step_minutes * 60
+
+    users = (
+        db.query(User)
+        .filter(User.role != UserRole.provider.value)
+        .order_by(User.id.asc())
+        .all()
+    )
+
+    for u in users:
+        ts = start
+        while ts <= now:
+            # calm, plausible demo ranges
+            prod = max(0.0, random.uniform(0.0, 3.0))
+            cons = max(0.0, random.uniform(0.6, 2.6))
+            services.record_meter_sample(
+                db=db,
+                user_id=u.id,
+                prod_kwh=round(prod, 3),
+                cons_kwh=round(cons, 3),
+                ts=ts,
+            )
+            ts += step
+
+
 class MeterSimulator(threading.Thread):
     """
     Background simulator that ONLY writes meter samples for non-provider users.
@@ -87,6 +119,15 @@ def start_simulator() -> None:
     if not settings.SIMULATION_ENABLED:
         print("[MeterSimulator] Not started (SIMULATION_ENABLED=False).")
         return
+        
+    db = SessionLocal()
+    try:
+        _backfill_last_12h(db, step_minutes=10)  # ~73 points per user
+    finally:
+        db.close()
+
+
+        
     if _SIMULATOR is None:
         _SIMULATOR = MeterSimulator(interval_seconds=settings.SIMULATION_INTERVAL_SECONDS)
         _SIMULATOR.start()
