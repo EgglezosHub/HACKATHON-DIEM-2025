@@ -2,141 +2,205 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>Smart Energy — Family App</title>
+  <title>MyElectra</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="stylesheet" href="./style.css"/>
-  <!-- Chart.js CDN -->
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Your theme overrides -->
+  <link rel="stylesheet" href="./style.css?v=6"/>
+
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <!-- Ethers v6 (for MetaMask + contract call) -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.min.js"></script>
 </head>
-<body>
-  <header class="topbar">
-    <div class="brand">⚡ Smart Energy</div>
+<body class="bg-body">
 
-    <!-- This container holds the centered navigation -->
-    <div class="nav-container">
-      <nav class="nav">
-        <button class="nav-btn active" data-page="dashboard">Dashboard</button>
-        <button class="nav-btn" data-page="marketplace">Marketplace</button>
-        <button class="nav-btn" data-page="sell">Sell</button>
-      </nav>
+  <!-- Top Navbar -->
+  <header class="border-bottom bg-white">
+    <nav class="navbar navbar-expand-lg container py-2">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold text-success" href="#">
+        <img src="photo/logo2.png" alt="Logo" class="logo" height="32" width="32"/>
+        <span>MyElectra</span>
+      </a>
 
-      <div class="user-switch">
-        <label for="userSelect">User</label>
-        <select id="userSelect" aria-label="Select user"></select>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="topbarNav">
+        <!-- Centered nav buttons -->
+        <div class="mx-auto my-2 my-lg-0 d-flex gap-2">
+          <!-- Keep .nav-btn + data-page for JS -->
+          <button class="btn btn-outline-success nav-btn active" data-page="dashboard">Dashboard</button>
+          <button class="btn btn-outline-success nav-btn" data-page="marketplace">Marketplace</button>
+          <button class="btn btn-outline-success nav-btn" data-page="sell">Sell</button>
+        </div>
+
+        <!-- User switch + Wallet -->
+        <div class="d-flex align-items-center gap-2 ms-lg-3">
+          <label for="userSelect" class="form-label mb-0 me-1 small text-muted">User</label>
+          <select id="userSelect" class="form-select form-select-sm" aria-label="Select user"></select>
+
+          <!-- Wallet connect -->
+          <button id="btnConnect" class="btn btn-outline-secondary btn-sm ms-2" title="Connect MetaMask">
+            Connect Wallet
+          </button>
+        </div>
       </div>
-    </div>
-
-    <!-- Empty div for grid alignment -->
-    <div></div>
+    </nav>
   </header>
 
-  <main>
+  <main class="container my-4">
     <!-- DASHBOARD -->
     <section id="page-dashboard" class="page show">
-      <h2 class="page-title">Dashboard</h2>
-      <div class="grid">
+      <h2 class="h4 fw-bold mb-3">Dashboard</h2>
 
+      <div class="row g-3">
         <!-- Balance -->
-        <div class="card">
-          <div class="card-title">Balance</div>
-          <div class="big-number">€ <span id="balance">0.00</span></div>
-          <div class="row">
-            <input id="fundAmount" type="number" step="0.1" min="0" placeholder="Add € (e.g. 5)"/>
-            <button id="btnFund">Add Funds</button>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <div class="card-title fw-semibold">Balance</div>
+              <div class="display-6 fw-bold text-success">€ <span id="balance">0.00</span></div>
+              <div class="d-flex gap-2 mt-2">
+                <input id="fundAmount" type="number" step="0.1" min="0" class="form-control" placeholder="Add € (e.g. 5)"/>
+                <button id="btnFund" class="btn btn-success">Add Funds</button>
+              </div>
+              <p class="text-muted small mt-2 mb-0">Tip: add a little balance before buying from households.</p>
+            </div>
           </div>
-          <p class="muted">Tip: add a little balance before buying from households.</p>
         </div>
 
         <!-- Surplus -->
-        <div class="card">
-          <div class="card-title">Stored Surplus</div>
-          <div class="big-number"><span id="surplus">0.00</span> kWh</div>
-          <p class="muted">Surplus updates when your smart meter reports a new sample.</p>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <div class="card-title fw-semibold">Stored Surplus</div>
+              <div class="display-6 fw-bold"><span id="surplus">0.00</span> kWh</div>
+              <p class="text-muted small mt-2 mb-0">Surplus updates when your smart meter reports a new sample.</p>
+            </div>
+          </div>
         </div>
 
         <!-- Recent Purchases -->
-        <div class="card">
-          <div class="card-title">Recent Purchases</div>
-          <ul id="tradesList" class="list"></ul>
+        <div class="col-12 col-lg-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <div class="card-title fw-semibold">Recent Purchases</div>
+              <ul id="tradesList" class="list-unstyled d-flex flex-column gap-2 mb-0"></ul>
+            </div>
+          </div>
         </div>
 
-        <!-- Charts row -->
-        <div class="card chart-card">
-          <div class="card-title">Provider Price (€/kWh)</div>
-          <div class="chart-wrap"><canvas id="chartProvider"></canvas></div>
+        <!-- Charts -->
+        <div class="col-12 col-md-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <div class="card-title fw-semibold">Provider Price (€/kWh)</div>
+              <div class="chart-wrap"><canvas id="chartProvider"></canvas></div>
+            </div>
+          </div>
         </div>
 
-        <div class="card chart-card">
-          <div class="card-title">My Balance (€)</div>
-          <div class="chart-wrap"><canvas id="chartBalance"></canvas></div>
+        <div class="col-12 col-md-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <div class="card-title fw-semibold">My Balance (€)</div>
+              <div class="chart-wrap"><canvas id="chartBalance"></canvas></div>
+            </div>
+          </div>
         </div>
 
-        <div class="card chart-card">
-          <div class="card-title">Energy Usage (kWh)</div>
-          <div class="chart-wrap"><canvas id="energyUsageChart"></canvas></div>
+        <div class="col-12 col-lg-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <div class="card-title fw-semibold">Energy Usage (kWh)</div>
+              <div class="chart-wrap"><canvas id="energyUsageChart"></canvas></div>
+            </div>
+          </div>
         </div>
 
-        <div class="card chart-card">
-          <div class="card-title">Energy Production (kWh)</div>
-          <div class="chart-wrap"><canvas id="energyProductionChart"></canvas></div>
+        <div class="col-12 col-lg-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <div class="card-title fw-semibold">Energy Production (kWh)</div>
+              <div class="chart-wrap"><canvas id="energyProductionChart"></canvas></div>
+            </div>
+          </div>
         </div>
 
-        <div class="card chart-card">
-          <div class="card-title">My Surplus (kWh)</div>
-          <div class="chart-wrap"><canvas id="chartSurplus"></canvas></div>
+        <div class="col-12 col-lg-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <div class="card-title fw-semibold">My Surplus (kWh)</div>
+              <div class="chart-wrap"><canvas id="chartSurplus"></canvas></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- MARKETPLACE -->
     <section id="page-marketplace" class="page">
-      <h2 class="page-title">Marketplace</h2>
-      <p class="muted">
-        Top cards show <b>Providers</b> (always available; dynamic hourly price).  
-        Below are <b>Household offers</b>. Choose kWh and press Buy.
+      <h2 class="h4 fw-bold mb-2">Marketplace</h2>
+      <p class="text-muted mb-3">
+        Top cards show <b>Providers</b>. Below are <b>Household offers</b>. Choose kWh and press Buy.
       </p>
-      <div id="marketGrid" class="grid"></div>
+      <div id="marketGrid" class="row g-3"></div>
     </section>
 
     <!-- SELL -->
     <section id="page-sell" class="page">
-      <h2 class="page-title">Sell Energy</h2>
-      <div class="card">
-        <div class="row">
-          <div class="stack">
-            <label>Stored Surplus</label>
-            <div class="big-number"><span id="sellSurplus">0.00</span> kWh</div>
+      <h2 class="h4 fw-bold mb-3">Sell Energy</h2>
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <label class="form-label">Stored Surplus</label>
+              <div class="display-6 fw-bold"><span id="sellSurplus">0.00</span> kWh</div>
+            </div>
+            <div class="col-12 col-md-6">
+              <label class="form-label">Suggested Price</label>
+              <div class="display-6 fw-bold">€ <span id="suggestedPrice">0.20</span> / kWh</div>
+              <small class="text-muted">Based on current provider price</small>
+            </div>
           </div>
-          <div class="stack">
-            <label>Suggested Price</label>
-            <div class="big-number">€ <span id="suggestedPrice">0.20</span> / kWh</div>
-            <small class="muted">Based on current provider price</small>
+
+          <hr class="my-3"/>
+
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <label for="sellKwh" class="form-label">How much to sell (kWh)</label>
+              <input id="sellKwh" type="number" step="0.1" min="0" class="form-control" placeholder="e.g. 2.5"/>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="sellPrice" class="form-label">Price (€/kWh)</label>
+              <input id="sellPrice" type="number" step="0.01" min="0" class="form-control" placeholder="e.g. 0.19"/>
+            </div>
           </div>
-        </div>
-        <div class="divider"></div>
-        <div class="row">
-          <div class="stack">
-            <label for="sellKwh">How much to sell (kWh)</label>
-            <input id="sellKwh" type="number" step="0.1" min="0" placeholder="e.g. 2.5"/>
+
+          <div class="d-flex justify-content-end mt-3">
+            <button id="btnSell" class="btn btn-success">Create Offer</button>
           </div>
-          <div class="stack">
-            <label for="sellPrice">Price (€/kWh)</label>
-            <input id="sellPrice" type="number" step="0.01" min="0" placeholder="e.g. 0.19"/>
-          </div>
-        </div>
-        <div class="row end">
-          <button id="btnSell">Create Offer</button>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <small>
-      Providers are displayed first with dynamic pricing. Household offers are user-initiated only.
+  <footer class="container pb-4">
+    <small class="text-muted">
+
     </small>
   </footer>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- App JS -->
   <script type="module" src="./script.js"></script>
 </body>
 </html>
+

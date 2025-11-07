@@ -1,11 +1,47 @@
 // ======= CONFIG =======
 const API_BASE = "http://localhost:8000";
 
+// ======= CHAIN CONFIG (put your deployed address below) =======
+const CONTRACT_ADDRESS = "0xYOUR_DEPLOYED_CONTRACT_ADDRESS"; // ⬅️ fill this
+// ABI reconstructed from contract.sol (EnergyAuditHash)
+const CONTRACT_ABI = [
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true,  "internalType": "uint256", "name": "tradeId", "type": "uint256" },
+      { "indexed": true,  "internalType": "bytes32", "name": "dataHash", "type": "bytes32" }
+    ],
+    "name": "TradeHashLogged",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "_tradeId", "type": "uint256" },
+      { "internalType": "bytes32", "name": "_dataHash", "type": "bytes32" }
+    ],
+    "name": "logTradeHash",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+];
+
+const DEMO_MODE = true;
+
+
 // ======= STATE =======
 let users = [];
 let currentUser = null;
 let providerPrice = 0.20;   // from backend providers (for suggestions)
 let suggestedSell = 0.19;
+
+// wallet/contract state
+let wallet = {
+  provider: null,
+  signer: null,
+  account: null,
+  contract: null,
+};
 
 // ======= CHARTS =======
 let chartProvider, chartBalance, chartSurplus;
@@ -22,6 +58,10 @@ const MAX_POINTS = 24;      // cap so charts don’t grow indefinitely
 // ======= BOOT =======
 document.addEventListener('DOMContentLoaded', async () => {
   setupNavWithAnimations();
+
+  // Wallet connect
+  document.getElementById('btnConnect').addEventListener('click', connectWallet);
+
   await loadUsers();
   buildUserSelect();
   selectUser(document.getElementById('userSelect').value);
@@ -29,17 +69,37 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('btnFund').addEventListener('click', onFund);
   document.getElementById('btnSell').addEventListener('click', onSell);
 
-  setupChartsOnce();                 // init all 5 charts
+  setupChartsOnce();
 
-  await refreshAll();                // first data pass
-  await updateChartsFromMetrics();   // first chart points
+  await refreshAll();
+  await updateChartsFromMetrics();
 
-  // poll to keep everything fresh
+  // poll
   setInterval(async () => {
     await refreshAll();
     await updateChartsFromMetrics();
   }, 15000);
 });
+
+// ======= WALLET =======
+async function connectWallet() {
+  if (!window.ethereum) return alert("MetaMask not found.");
+  try {
+    const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+    wallet.account = accounts[0];
+    wallet.provider = new ethers.BrowserProvider(window.ethereum);
+    wallet.signer = await wallet.provider.getSigner();
+    wallet.contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, wallet.signer);
+    document.getElementById('btnConnect').textContent = shorten(wallet.account);
+  } catch (e) {
+    console.error(e);
+    alert("Wallet connection failed");
+  }
+}
+
+function shorten(addr) {
+  return addr ? `${addr.slice(0,6)}…${addr.slice(-4)}` : "";
+}
 
 // ======= NAV (with animations) =======
 function setupNavWithAnimations(){
@@ -76,6 +136,7 @@ async function loadUsers(){
 
 function buildUserSelect(){
   const sel = document.getElementById('userSelect');
+  sel.classList.add('form-select','form-select-sm');
   sel.innerHTML = '';
   users.filter(u => u.role !== 'provider').forEach(u=>{
     const opt = document.createElement('option');
@@ -88,9 +149,16 @@ function buildUserSelect(){
 
 async function selectUser(userId){
   const id = Number(userId);
-  currentUser = users.find(u=>u.id===id);
+  currentUser = users.find(u => u.id === id);
+
+  // Preload each chart with the new user's last 12h
+  await hydrateChartsForUser(id);
+
+  // Then pull the live cards/lists
   await refreshAll();
+  // And keep the periodic poll you already have to append new points
 }
+
 
 // ======= REFRESH ALL =======
 async function refreshAll(){
@@ -105,10 +173,33 @@ async function refreshAll(){
 
 // ======= DASHBOARD =======
 async function refreshStatus(){
-  const r = await fetch(`${API_BASE}/status/${currentUser.id}`);
-  const s = await r.json();
-  document.getElementById('balance').textContent = s.balance_eur.toFixed(2);
-  document.getElementById('surplus').textContent = s.stored_surplus_kwh.toFixed(2);
+  if (!currentUser) return;
+
+  // Try extended first (if you add it later), else fallback
+  let data = null;
+  try {
+    const r = await fetch(`${API_BASE}/status/extended?user_id=${currentUser.id}`);
+    if (r.ok) data = await r.json();
+  } catch {}
+
+  if (!data || typeof data.balance_eur !== 'number') {
+    try {
+      const r2 = await fetch(`${API_BASE}/status/${currentUser.id}`);
+      if (r2.ok) {
+        const s2 = await r2.json();
+        data = {
+          balance_eur: Number(s2.balance_eur) || 0,
+          available_kwh: Number(s2.stored_surplus_kwh) || 0
+        };
+      }
+    } catch {}
+  }
+  if (!data) return;
+
+  const balEl = document.getElementById('balance');
+  const surEl = document.getElementById('surplus');
+  if (balEl) balEl.textContent = Number(data.balance_eur).toFixed(2);
+  if (surEl) surEl.textContent = Number(data.available_kwh).toFixed(2);
 }
 
 async function onFund(){
@@ -132,8 +223,8 @@ async function refreshTrades(){
   trades.slice(0,6).forEach(t=>{
     const li = document.createElement('li');
     li.innerHTML = `
-      <span>#${t.id} • ${t.kwh.toFixed(2)} kWh</span>
-      <span>€${t.total_eur.toFixed(2)} • ${new Date(t.ts*1000).toLocaleTimeString()}</span>
+      <span>#${t.id} • ${Number(t.kwh).toFixed(2)} kWh</span>
+      <span>€${Number(t.total_eur).toFixed(2)} • ${new Date(t.ts*1000).toLocaleTimeString()}</span>
     `;
     ul.appendChild(li);
   });
@@ -158,52 +249,61 @@ async function refreshMarketplace(){
 
   // top pinned providers (2)
   providers.slice(0,2).forEach(p=>{
-    const card = document.createElement('div');
-    card.className = 'card mkt-card provider';
-    card.innerHTML = `
-      <div class="mkt-top">
-        <span class="badge">PROVIDER</span>
-        <strong>${p.provider_name}</strong>
-      </div>
-      <div class="price">€${p.price_eur_per_kwh.toFixed(3)} / kWh</div>
-      <small class="hint">Always available • Hourly dynamic price</small>
-      <div class="buy-row">
-        <input type="number" step="0.1" min="0.1" placeholder="kWh" disabled>
-        <button disabled title="Provider buying requires backend endpoint">Buy</button>
+    const col = document.createElement('div');
+    col.className = 'col-12 col-md-6 col-lg-4';
+    col.innerHTML = `
+      <div class="card mkt-card provider h-100">
+        <div class="card-body d-flex flex-column gap-2">
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="badge text-bg-success-subtle border">PROVIDER</span>
+            <strong>${p.provider_name}</strong>
+          </div>
+          <div class="fs-5 fw-bold text-success">€${p.price_eur_per_kwh.toFixed(3)} / kWh</div>
+          <small class="text-muted">Always available • Hourly dynamic price</small>
+          <div class="d-flex gap-2 mt-1">
+            <input type="number" step="0.1" min="0.1" placeholder="kWh" class="form-control" disabled>
+            <button class="btn btn-secondary" disabled title="Provider buying requires backend endpoint">Buy</button>
+          </div>
+        </div>
       </div>
     `;
-    grid.appendChild(card);
+    grid.appendChild(col);
   });
 
   // household offers
   offers.forEach(o=>{
     const isMine = o.seller_id === currentUser.id;
-    const card = document.createElement('div');
-    card.className = 'card mkt-card';
-    card.innerHTML = `
-      <div class="mkt-top">
-        <span class="badge">HOUSEHOLD</span>
-        <span>Seller #${o.seller_id}</span>
-      </div>
-      <div class="price">€${o.price_eur_per_kwh.toFixed(3)} / kWh</div>
-      <div>Remaining: ${o.kwh_remaining.toFixed(3)} kWh</div>
-      <div class="buy-row">
-        <input type="number" step="0.1" min="0.1" placeholder="kWh" ${isMine?'disabled':''}>
-        <button ${isMine?'disabled':''}>Buy</button>
+    const col = document.createElement('div');
+    col.className = 'col-12 col-md-6 col-lg-4';
+    col.innerHTML = `
+      <div class="card mkt-card h-100">
+        <div class="card-body d-flex flex-column gap-2">
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="badge text-bg-light border">HOUSEHOLD</span>
+            <span class="small text-muted">Seller #${o.seller_id}</span>
+          </div>
+          <div class="fs-5 fw-bold text-success">€${o.price_eur_per_kwh.toFixed(3)} / kWh</div>
+          <div class="text-muted">Remaining: ${o.kwh_remaining.toFixed(3)} kWh</div>
+          <div class="d-flex gap-2 mt-auto">
+            <input type="number" step="0.1" min="0.1" placeholder="kWh" class="form-control" ${isMine?'disabled':''}>
+            <button class="btn btn-success" ${isMine?'disabled':''}>Buy</button>
+          </div>
+        </div>
       </div>
     `;
-    const input = card.querySelector('input');
-    const btn = card.querySelector('button');
+    const input = col.querySelector('input');
+    const btn = col.querySelector('button');
     btn.addEventListener('click', async ()=>{
       const k = parseFloat(input.value || '0');
       if(!(k>0)) return alert('Enter kWh > 0');
       await buyHousehold(o.offer_id, Math.min(k, o.kwh_remaining), o.price_eur_per_kwh);
     });
-    grid.appendChild(card);
+    grid.appendChild(col);
   });
 }
 
 async function buyHousehold(offerId, kwh, unitPrice){
+  // Step 1: accept the offer in the backend (DB settlement)
   let res = await fetch(`${API_BASE}/accept`,{
     method:'POST', headers:{'Content-Type':'application/json'},
     body: JSON.stringify({ buyer_id: currentUser.id, offer_id: offerId, kwh })
@@ -225,12 +325,36 @@ async function buyHousehold(offerId, kwh, unitPrice){
     const j = await res.json().catch(()=>({}));
     return alert(j.detail || 'Purchase failed');
   }
-  alert(`Purchased ${kwh.toFixed(2)} kWh`);
-  await Promise.all([refreshStatus(), refreshMarketplace(), refreshTrades()]);
+
+  const trade = await res.json(); // {id, offer_id, buyer_id, kwh, total_eur, ts, tx_hash?}
+  alert(`Purchased ${Number(trade.kwh).toFixed(2)} kWh (Trade #${trade.id})`);
+
+  // Step 2: on-chain audit (emit event with SHA-256 of canonical trade data)
+  try {
+    const txHash = await auditOnChain(trade);
+    if (txHash) {
+      // Step 3: store tx hash back to backend (for audit linking)
+      await fetch(`${API_BASE}/chain/trade-confirm`, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ trade_id: trade.id, tx_hash: txHash })
+      });
+    }
+  } catch (e) {
+    console.warn("On-chain audit skipped/failed:", e);
+  }
+
+  await Promise.all([
+    refreshStatus(),
+    refreshMarketplace(),
+    refreshTrades(),
+    refreshSellPane()
+  ]);
 }
 
 // ======= SELL PAGE =======
 async function refreshSellPane(){
+  if (!currentUser) return;
   const r = await fetch(`${API_BASE}/status/${currentUser.id}`);
   const s = await r.json();
   document.getElementById('sellSurplus').textContent = s.stored_surplus_kwh.toFixed(2);
@@ -250,22 +374,64 @@ async function onSell(){
   const j = await res.json().catch(()=>({}));
   if(!res.ok) return alert(j.detail || 'Failed to create offer (role must be both/producer).');
   document.getElementById('sellKwh').value = '';
-  await refreshMarketplace();
+  await Promise.all([refreshMarketplace(), refreshStatus(), refreshSellPane()]);
 }
 
-// ======= CHARTS: “first file” styling for all =======
+// ======= ON-CHAIN AUDIT HELPERS =======
+function canonicalTradeString(t) {
+  const obj = {
+    id: Number(t.id),
+    offer_id: Number(t.offer_id),
+    buyer_id: Number(t.buyer_id),
+    kwh: Number(t.kwh),
+    total_eur: Number(t.total_eur),
+    ts: Number(t.ts)
+  };
+  return JSON.stringify(obj);
+}
+
+async function sha256Hex(str) {
+  const enc = new TextEncoder();
+  const buf = await crypto.subtle.digest('SHA-256', enc.encode(str));
+  const bytes = Array.from(new Uint8Array(buf));
+  return "0x" + bytes.map(b => b.toString(16).padStart(2,'0')).join('');
+}
+
+async function auditOnChain(trade) {
+  const data = canonicalTradeString(trade);
+  const hashHex = await sha256Hex(data);
+
+  if (wallet.contract && wallet.signer) {
+    try {
+      const tx = await wallet.contract.logTradeHash(trade.id, hashHex);
+      const receipt = await tx.wait();
+      console.info("Audit event tx (real):", receipt.transactionHash);
+      return receipt.transactionHash;
+    } catch (err) {
+      console.warn("On-chain audit failed:", err);
+    }
+  }
+
+  if (DEMO_MODE) {
+    const buf = crypto.getRandomValues(new Uint8Array(32));
+    const fake = "0x" + Array.from(buf).map(b => b.toString(16).padStart(2, '0')).join('');
+    console.info("Demo-mode fake tx hash:", fake, "for trade", trade.id);
+    return fake;
+  }
+
+  return null;
+}
+
+// ======= CHARTS =======
 function setupChartsOnce(){
-  // Provider / Balance / Surplus
   chartProvider = initializeChartById('chartProvider', '€/kWh', '#2563eb');
   chartBalance  = initializeChartById('chartBalance',  '€',     '#10b981');
   chartSurplus  = initializeChartById('chartSurplus',  'kWh',   '#f59e0b');
 
-  // Usage / Production (exact look & colors you used before)
   energyUsageChart      = initializeChartById('energyUsageChart',      'Energy Usage',      '#007bff');
   energyProductionChart = initializeChartById('energyProductionChart', 'Energy Production', '#28a745');
 
-  // Seed usage/production with tidy history like before
-  usageSeries = generateRandomEnergyData(12, 5);
+  usageSeries      = generateRandomEnergyData(12, 5);
   productionSeries = generateRandomEnergyData(12, 8);
   updateChartData(energyUsageChart, usageSeries);
   updateChartData(energyProductionChart, productionSeries);
@@ -340,7 +506,45 @@ function pushCapped(series, point) {
   if (series.length > MAX_POINTS) series.shift();
 }
 
-// Pulls provider price, balance/surplus, and usage/production; updates all charts
+function tsToLabel(ts){
+  return new Date(ts * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
+async function hydrateChartsForUser(userId){
+  // Provider 12h
+  try {
+    const pr = await (await fetch(`${API_BASE}/provider/series?hours=12`)).json();
+    if (Array.isArray(pr.points)) {
+      providerSeries = pr.points.map(p => ({
+        time: tsToLabel(p.ts),
+        value: +Number(p.price_eur_per_kwh).toFixed(3)
+      }));
+      updateChartData(chartProvider, providerSeries);
+      if (pr.points.length) providerPrice = pr.points.at(-1).price_eur_per_kwh;
+    }
+  } catch (e) { console.warn('provider/series hydrate failed', e); }
+
+  // User meter 12h
+  try {
+    const mr = await (await fetch(`${API_BASE}/meter/series?user_id=${userId}&hours=12`)).json();
+    const samples = Array.isArray(mr.samples) ? mr.samples : [];
+    usageSeries = samples.map(s => ({ time: tsToLabel(s.ts), value: +Number(s.consumption_kwh).toFixed(2) }));
+    productionSeries = samples.map(s => ({ time: tsToLabel(s.ts), value: +Number(s.production_kwh).toFixed(2) }));
+    surplusSeries = samples.map(s => ({ time: tsToLabel(s.ts), value: +Number(s.surplus_kwh).toFixed(2) }));
+    updateChartData(energyUsageChart, usageSeries);
+    updateChartData(energyProductionChart, productionSeries);
+    updateChartData(chartSurplus, surplusSeries);
+  } catch (e) { console.warn('meter/series hydrate failed', e); }
+
+  // Balance seed point
+  try {
+    const s = await (await fetch(`${API_BASE}/status/${userId}`)).json();
+    const label = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+    balanceSeries = [{ time: label, value: +Number(s.balance_eur).toFixed(2) }];
+    updateChartData(chartBalance, balanceSeries);
+  } catch (e) { console.warn('balance seed failed', e); }
+}
+
 async function updateChartsFromMetrics() {
   if (!currentUser) return;
   const label = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
@@ -363,7 +567,7 @@ async function updateChartsFromMetrics() {
     updateChartData(chartSurplus, surplusSeries);
   } catch {}
 
-  // Usage & Production (real if /meter/last exists; else a gentle drift)
+  // Usage & Production (real if /meter/last exists; else drift)
   const { usage, production } = await fetchLatestProdCons(currentUser.id);
   pushCapped(usageSeries,      { time: label, value: +usage.toFixed(2) });
   pushCapped(productionSeries, { time: label, value: +production.toFixed(2) });
@@ -382,7 +586,6 @@ async function fetchLatestProdCons(userId) {
       };
     }
   } catch (_) {}
-  // fallback drift around last values (bounded)
   const lastU = usageSeries.length ? usageSeries.at(-1).value : 2.5;
   const lastP = productionSeries.length ? productionSeries.at(-1).value : 3.5;
   const clamp = (x,min,max)=>Math.max(min, Math.min(max, x));
@@ -391,3 +594,4 @@ async function fetchLatestProdCons(userId) {
     production: clamp(lastP + (Math.random()-0.5)*0.8, 0, 8)
   };
 }
+

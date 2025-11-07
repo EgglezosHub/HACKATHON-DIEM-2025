@@ -1,65 +1,51 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.20;
 
-/**
- * @title EnergyAuditHash
- * @dev ΤΕΛΙΚΗ ΕΚΔΟΣΗ (v3) - Βασισμένη στην ιδέα του Hashing!
- *
- * ΑΥΤΟ ΤΟ ΣΥΜΒΟΛΑΙΟ ΔΕΝ ΑΠΟΘΗΚΕΥΕΙ ΔΕΔΟΜΕΝΑ.
- * Αποθηκεύει ΜΟΝΟ ένα "hash" (ένα cryptographic fingerprint)
- * των δεδομένων της συναλλαγής για μέγιστη προστασία ιδιωτικότητας (privacy).
- *
- * Η ροή είναι:
- * 1. Backend (Python): Κάνει τη συναλλαγή στη SQL DB (π.χ. tradeId: 42).
- * 2. Backend: Φτιάχνει ένα JSON/string με τα data (π.χ. "{'id':42, 'kwh':10.5, ...}")
- * 3. Backend: Κάνει hash (π.χ. SHA-256) αυτό το string -> 0xabc123...
- * 4. Backend -> Frontend: Δίνει το tradeId (42) και το hash (0xabc123...).
- * 5. Frontend -> MetaMask -> Καλεί τη συνάρτηση `logTradeHash(42, 0xabc123...)`
- * 6. MetaMask -> Frontend: Επιστρέφει το tx_hash.
- * 7. Frontend -> Backend: Καλεί το `/chain/trade-confirm` με το tx_hash.
- */
-contract EnergyAuditHash
-{
+/// @title EnergyAuditHash
+/// @notice Minimal audit trail for off-chain energy trades:
+///         - Frontend hashes a canonical JSON of the trade (SHA-256 → bytes32).
+///         - This contract stores the hash by tradeId and emits an event.
+///         - Auditors can recompute the hash off-chain and compare it to on-chain data.
+contract EnergyAuditHash {
+    /// @dev Emitted whenever a trade hash is logged/updated.
+    /// @param tradeId  Off-chain trade ID from your database.
+    /// @param dataHash SHA-256 hash of the canonical trade JSON (32 bytes).
+    /// @param by       The wallet that called logTradeHash (buyer, seller, or app wallet).
+    event TradeHashLogged(uint256 indexed tradeId, bytes32 indexed dataHash, address indexed by);
 
-    address public gridOperator;
+    // --- Optional on-chain storage (keeps latest value if re-logged) ---
+    mapping (uint256 => bytes32) private _tradeHash; // tradeId => bytes32
+    mapping (uint256 => address) public  loggedBy;   // tradeId => last msg.sender
+    mapping (uint256 => uint256) public  loggedAt;   // tradeId => last block.timestamp
 
-    /**
-     * @dev "Φωνάζει" το hash της συναλλαγής.
-     * Το on-chain event περιέχει ΜΟΝΟ το ID και το hash.
-     * Όλα τα άλλα data (kwh, eur) μένουν με ασφάλεια στο backend (off-chain).
-     */
-    event TradeHashLogged(
-        uint256 indexed tradeId,      // Το ID από τον SQL πίνακα 'Trade'
-        bytes32 indexed dataHash      // Το SHA-256 hash του 
-JSON/string
-    );
-
-    constructor()
-    {
-        gridOperator = msg.sender;
+    /// @notice Log (or update) the hash for a trade ID and emit an event.
+    /// @dev Keep the hashing in your frontend (SHA-256 of canonical JSON → bytes32 hex "0x…").
+    /// @param _tradeId  Off-chain trade ID.
+    /// @param _dataHash SHA-256 hash (bytes32). Example: 0x1234… (32 bytes).
+    function logTradeHash(uint256 _tradeId, bytes32 _dataHash) external {
+        _tradeHash[_tradeId] = _dataHash;
+        loggedBy[_tradeId] = msg.sender;
+        loggedAt[_tradeId] = block.timestamp;
+        emit TradeHashLogged(_tradeId, _dataHash, msg.sender);
     }
 
-    /**
-     * @dev (Για το Frontend) Καλείται ΑΦΟΥ η συναλλαγή γίνει στο backend.
-     * Ο αγοραστής καλεί αυτή τη συνάρτηση για να "σφραγίσει" το hash
-     * της συναλλαγής του στο blockchain.
-     *
-     * @param _tradeId Το ID της συναλλαγής από τη βάση δεδομένων (π.χ. 42)
-     * @param _dataHash Το hash (bytes32) των δεδομένων της συναλλαγής.
-     */
-    function logTradeHash
-    (
-        uint256 _tradeId,
-        bytes32 _dataHash
-    ) public
+    /// @notice Read the current stored hash for a trade.
+    /// @param _tradeId Off-chain trade ID.
+    /// @return dataHash The last stored bytes32 hash for this trade ID (0x0 if none).
+    function getTradeHash(uint256 _tradeId) external view returns (bytes32 dataHash) {
+        return _tradeHash[_tradeId];
+    }
+
+    /// @notice Convenience getter: returns all audit fields for a trade.
+    /// @param _tradeId Off-chain trade ID.
+    /// @return dataHash The stored hash.
+    /// @return by       The address that last wrote this trade’s hash.
+    /// @return at       The timestamp (block time) of the last write.
+    function getAuditEntry(uint256 _tradeId)
+        external
+        view
+        returns (bytes32 dataHash, address by, uint256 at)
     {
-        // Απλά εκπέμπουμε το Event.
-        // Αυτή είναι η αδιάφθορη, on-chain "απόδειξη"
-        // ότι μια συναλλαγή με αυτό το hash όντως συνέβη.
-        emit TradeHashLogged
-        (
-            _tradeId,
-            _dataHash
-        );
+        return (_tradeHash[_tradeId], loggedBy[_tradeId], loggedAt[_tradeId]);
     }
 }

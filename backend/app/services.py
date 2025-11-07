@@ -196,19 +196,52 @@ def compute_surplus_last_hours(db: Session, user_id: int, hours: int = 12) -> fl
 
 def get_user_status(db: Session, user_id: int) -> dict:
     """
-    Return wallet balance and a realistic 'stored_surplus_kwh' = sum of positive
-    (production - consumption) over the last 12 hours (windowed storage).
+    Return wallet balance and *available* stored surplus:
+      available = sum_{last 12h} max(0, prod - cons) - active_offers_remaining
     """
     user = db.get(User, user_id)
     if not user:
         raise ValueError("User not found")
 
     stored_12h = compute_surplus_last_hours(db, user_id, hours=12)
+    reserved = compute_reserved_surplus_kwh(db, user_id)
+    available = max(0.0, round(stored_12h - reserved, 4))
+
     return {
         "user_id": user_id,
-        "stored_surplus_kwh": stored_12h,
+        "stored_surplus_kwh": available,
         "balance_eur": round(user.balance_eur, 4),
     }
+
+def get_user_status_extended(db: Session, user_id: int) -> dict:
+    user = db.get(User, user_id)
+    if not user:
+        raise ValueError("User not found")
+
+    stored_12h = compute_surplus_last_hours(db, user_id, hours=12)
+    reserved = compute_reserved_surplus_kwh(db, user_id)
+    available = max(0.0, round(stored_12h - reserved, 4))
+
+    return {
+        "user_id": user_id,
+        "stored_12h_kwh": round(stored_12h, 4),
+        "reserved_kwh": round(reserved, 4),
+        "available_kwh": available,
+        "balance_eur": round(user.balance_eur, 4),
+    }
+
+
+
+def compute_reserved_surplus_kwh(db: Session, user_id: int) -> float:
+    """
+    Sum of kWh that the user has *reserved* in active offers.
+    """
+    q = select(func.coalesce(func.sum(Offer.kwh_remaining), 0.0)).where(
+        Offer.seller_id == user_id,
+        Offer.status == OfferStatus.active.value,
+    )
+    reserved = db.execute(q).scalar_one()
+    return float(round(reserved or 0.0, 4))
 
 
 
@@ -224,6 +257,12 @@ def create_offer(db: Session, seller_id: int, kwh: float, price_eur_per_kwh: flo
         raise ValueError("Only producers or both can create offers")
     if kwh <= 0 or price_eur_per_kwh <= 0:
         raise ValueError("kWh and price must be positive")
+    
+    stored_12h = compute_surplus_last_hours(db, seller_id, hours=12)
+    reserved = compute_reserved_surplus_kwh(db, seller_id)
+    available = round(stored_12h - reserved, 4)
+    if kwh > available + 1e-9:
+        raise ValueError(f"Not enough surplus to sell. Available: {max(0.0, available):.2f} kWh")    
 
     now = int(time.time()) if ts is None else ts
     offer = Offer(
@@ -289,76 +328,58 @@ def list_market_items(db: Session, limit_household: int = 100) -> List[MarketIte
 # Accepting an Offer (buy) — atomic update with platform fee
 # ============================================================================
 
-def accept_offer(
-    db: Session,
-    buyer_id: int,
-    offer_id: int,
-    kwh: float,
-    tx_hash: Optional[str] = None,
-) -> Trade:
-    """
-    Atomic purchase:
-      - validate offer and buyer
-      - compute total and platform fee
-      - move funds buyer->seller(net)
-      - reduce kwh_remaining
-      - close offer if fully filled
-      - create Trade (with optional tx_hash for blockchain audit)
-    """
+def accept_offer(db: Session, buyer_id: int, offer_id: int, kwh: float, tx_hash: Optional[str] = None):
     if kwh <= 0:
         raise ValueError("kWh must be positive")
 
-    now = int(time.time())
-    with db.begin():  # atomic block
-        offer = db.get(Offer, offer_id)
-        if not offer:
-            raise ValueError("Offer not found")
-        if offer.status != OfferStatus.active.value or offer.kwh_remaining <= 0:
-            raise ValueError("Offer not available")
+    buyer = db.get(User, buyer_id)
+    if not buyer:
+        raise ValueError("Buyer not found")
 
-        if kwh > offer.kwh_remaining + 1e-9:
-            raise ValueError("Requested kWh exceeds remaining")
+    offer = db.get(Offer, offer_id)
+    if not offer or offer.status != OfferStatus.active.value:
+        raise ValueError("Offer not available")
 
-        buyer = db.get(User, buyer_id)
-        if not buyer:
-            raise ValueError("Buyer not found")
+    if offer.seller_id == buyer_id:
+        raise ValueError("Cannot buy your own offer")
 
-        seller = db.get(User, offer.seller_id)
-        if not seller:
-            raise ValueError("Seller not found")
+    # How much can actually be bought
+    qty = min(kwh, offer.kwh_remaining)
+    if qty <= 0:
+        raise ValueError("No remaining kWh in this offer")
 
-        total = round(kwh * offer.price_eur_per_kwh, 4)
-        fee = round(total * settings.PLATFORM_FEE_RATE, 4)
-        net = round(total - fee, 4)
+    # Cost check
+    cost = round(qty * offer.price_eur_per_kwh, 4)
+    if buyer.balance_eur + 1e-9 < cost:
+        raise ValueError(f"Insufficient funds. Need €{cost:.2f}")
 
-        # MVP settlement using demo EUR balance (DB is SoT; chain is audit)
-        if buyer.balance_eur + 1e-9 < total:
-            raise ValueError("Insufficient buyer balance")
+    # Apply settlement
+    buyer.balance_eur = round(buyer.balance_eur - cost, 4)
+    seller = db.get(User, offer.seller_id)
+    seller.balance_eur = round(seller.balance_eur + cost, 4)
 
-        buyer.balance_eur = round(buyer.balance_eur - total, 4)
-        seller.balance_eur = round(seller.balance_eur + net, 4)
+    offer.kwh_remaining = round(offer.kwh_remaining - qty, 4)
+    if offer.kwh_remaining <= 1e-9:
+        offer.kwh_remaining = 0.0
+        offer.status = OfferStatus.completed.value
 
-        # reduce remaining energy and possibly close offer
-        new_rem = round(offer.kwh_remaining - kwh, 4)
-        offer.kwh_remaining = new_rem
-        if new_rem <= 1e-9:
-            offer.kwh_remaining = 0.0
-            offer.status = OfferStatus.closed.value
+    # Create trade record (what the FE expects back)
+    now_ts = int(time.time())
+    tr = Trade(
+        buyer_id=buyer_id,
+        offer_id=offer.id,
+        kwh=qty,
+        total_eur=cost,
+        ts=now_ts,
+        tx_hash=tx_hash,
+    )
 
-        trade = Trade(
-            offer_id=offer.id,
-            buyer_id=buyer.id,
-            kwh=round(kwh, 4),
-            total_eur=total,
-            ts=now,
-            tx_hash=tx_hash,
-        )
-        db.add(trade)
+    db.add_all([buyer, seller, offer, tr])
+    db.commit()
+    db.refresh(tr)
 
-    # out-of-transaction refresh
-    db.refresh(trade)
-    return trade
-
+    # Return the ORM object; FastAPI will serialize to TradeOut
+    return tr
 
 def list_trades_for_user(db: Session, user_id: int, limit: int = 50) -> List[Trade]:
     return db.scalars(
